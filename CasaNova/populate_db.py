@@ -7,7 +7,6 @@ import os
 import sys
 import django
 
-# Configurar Django
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'CasaNova'))
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'CasaNova.settings')
 django.setup()
@@ -18,10 +17,8 @@ from django.contrib.auth.models import User
 def populate_database():
     print("🏗️  Iniciando população da base de dados...")
     
-    # Obter usuário admin
     user = User.objects.get_or_create(username='admin')[0]
     
-    # Criar corretores
     corretores_data = [
         {
             'nome': 'João Silva',
@@ -87,7 +84,6 @@ def populate_database():
             print(f"- Corretor já existe: {corretor.nome}")
         corretores.append(corretor)
     
-    # Criar imóveis
     imoveis_data = [
         {
             'titulo': 'Apartamento Moderno no Centro',
@@ -143,7 +139,6 @@ def populate_database():
         else:
             print(f"- Imóvel já existe: {imovel.titulo}")
     
-    # Resumo
     print("\n" + "="*60)
     print("✅ Resumo da População:")
     print(f"  • Corretores: {Corretor.objects.count()}")

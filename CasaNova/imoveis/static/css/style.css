@@ -151,8 +151,8 @@ form select {
     border: 1px solid var(--color3);
     border-radius: 4px;
     font-size: 0.95em;
-    background-color: rgba(255, 255, 255, 0.95);
-    color: var(--color1);
+    background-color: rgba(20, 95, 140, 0.4);
+    color: white;
 }
 
 form input:focus,

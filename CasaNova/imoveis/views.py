@@ -2,9 +2,47 @@ from django.shortcuts import render
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from rest_framework import viewsets
-from .models import Imovel
+from .models import Imovel, Corretor
 from .forms import ImovelForm
 from .serializers import ImovelSerializer
+
+
+# ============= CORRETOR CRUD =============
+
+class CorretorListView(ListView):
+    model = Corretor
+    template_name = 'corretor_list.html'
+    context_object_name = 'corretores'
+    paginate_by = 10
+
+
+class CorretorDetailView(DetailView):
+    model = Corretor
+    template_name = 'corretor_detail.html'
+    context_object_name = 'corretor'
+
+
+class CorretorCreateView(CreateView):
+    model = Corretor
+    fields = ['nome', 'creci', 'telefone']
+    template_name = 'corretor_form.html'
+    success_url = reverse_lazy('lista_corretores')
+
+
+class CorretorUpdateView(UpdateView):
+    model = Corretor
+    fields = ['nome', 'creci', 'telefone']
+    template_name = 'corretor_form.html'
+    success_url = reverse_lazy('lista_corretores')
+
+
+class CorretorDeleteView(DeleteView):
+    model = Corretor
+    template_name = 'corretor_confirm_delete.html'
+    success_url = reverse_lazy('lista_corretores')
+
+
+# ============= IMOVEL CRUD =============
 
 class ImovelListView(ListView):
     model = Imovel

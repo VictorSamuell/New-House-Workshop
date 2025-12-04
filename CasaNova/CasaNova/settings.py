@@ -72,9 +72,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'CasaNova.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/6.0/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -86,9 +83,6 @@ DATABASES = {
     }
 }
 
-
-# Password validation
-# https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -106,8 +100,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/6.0/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
@@ -117,22 +109,16 @@ USE_I18N = True
 
 USE_TZ = True
 
-# When a view redirects to login due to authentication, send to home instead
 LOGIN_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/6.0/howto/static-files/
-
 STATIC_URL = 'static/'
 
-# Directories where Django looks for static files (in addition to app directories)
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
-# Where collectstatic collects files for production
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Media files (uploads)

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+    <h2>{{ corretor.nome }}</h2>
+    
+    <p><strong>CRECI:</strong> {{ corretor.creci }}</p>
+    <p><strong>Telefone:</strong> {{ corretor.telefone }}</p>
+    
+    <a href="{% url 'editar_corretor' corretor.id %}">Editar</a>
+    <a href="{% url 'deletar_corretor' corretor.id %}">Deletar</a>
+    <a href="{% url 'lista_corretores' %}">Voltar à Lista</a>
+{% endblock %}

@@ -1,4 +1,11 @@
-/* CasaNova Imóveis - Estilos Básicos */
+:root {
+    --color1: #120907;
+    --color2: #122942;
+    --color3: #145f8c;
+    --color4: #209ed9;
+    --color5: #20dbd8;
+}
+
 
 * {
     margin: 0;
@@ -6,57 +13,122 @@
     box-sizing: border-box;
 }
 
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --s: 170px;
+    --c1: #1a4341;
+    --c2: #4f807c;
+    --c3: #356260;
+    --thickness: 15px;
+
+    background-color: var(--c1);
+    background-image: repeating-linear-gradient(
+        45deg,
+        var(--c2) 0 var(--thickness),
+        transparent var(--thickness) calc(var(--thickness) * 2)
+    ),
+    repeating-linear-gradient(
+        -45deg,
+        var(--c3) 0 var(--thickness),
+        transparent var(--thickness) calc(var(--thickness) * 2)
+    );
+    background-size: var(--s) var(--s);
+    background-attachment: fixed;
+    color: #f0f0f0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0;
+    background: rgba(18, 41, 66, 0.92);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 20px;
+    background-color: var(--color2);
+    color: var(--color5);
+    padding: 25px 20px;
     text-align: center;
+    border-bottom: 2px solid var(--color5);
 }
 
 header h1 {
-    font-size: 2.5em;
-    margin: 0;
+    font-size: 2.2em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background-color: rgba(20, 95, 140, 0.6);
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: var(--color3);
+    border: 1px solid var(--color4);
+    border-radius: 4px;
+    transition: all 0.2s;
+    font-size: 0.95em;
+}
+
+nav a:hover {
+    background-color: var(--color4);
+    border-color: var(--color5);
 }
 
 main {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    background-color: rgba(18, 41, 66, 0.5);
 }
 
 h2 {
-    color: #2c3e50;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #3498db;
+    color: var(--color5);
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    font-weight: 600;
+    border-bottom: 1px solid var(--color4);
     padding-bottom: 10px;
 }
 
-a {
-    color: #3498db;
+a:not(nav a) {
+    color: var(--color4);
     text-decoration: none;
-    padding: 5px 10px;
+    padding: 8px 16px;
     margin: 5px;
     display: inline-block;
-}
-
-a:hover {
-    background-color: #3498db;
-    color: white;
+    background-color: rgba(20, 95, 140, 0.4);
+    border: 1px solid var(--color4);
     border-radius: 4px;
+    transition: all 0.2s;
+    font-size: 0.9em;
 }
 
-/* Formulários */
+a:not(nav a):hover {
+    background-color: var(--color4);
+    color: white;
+}
+
 form {
     margin: 20px 0;
+    background: rgba(20, 95, 140, 0.2);
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 3px solid var(--color4);
 }
 
 form p {
@@ -65,8 +137,10 @@ form p {
 
 form label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: var(--color5);
+    font-size: 0.95em;
 }
 
 form input,
@@ -74,9 +148,19 @@ form textarea,
 form select {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--color3);
     border-radius: 4px;
-    font-size: 1em;
+    font-size: 0.95em;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: var(--color1);
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+    outline: none;
+    border-color: var(--color4);
+    box-shadow: 0 0 6px rgba(32, 157, 217, 0.2);
 }
 
 form textarea {
@@ -86,29 +170,34 @@ form textarea {
 
 button,
 .btn-delete {
-    background-color: #27ae60;
+    background-color: var(--color3);
     color: white;
     padding: 10px 20px;
-    border: none;
+    border: 1px solid var(--color4);
     border-radius: 4px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.2s;
+    margin-top: 10px;
 }
 
 button:hover,
 .btn-delete:hover {
-    background-color: #229954;
+    background-color: var(--color4);
+    border-color: var(--color5);
 }
 
 .btn-delete {
-    background-color: #e74c3c;
+    background-color: #c0392b;
+    border-color: #e74c3c;
 }
 
 .btn-delete:hover {
-    background-color: #c0392b;
+    background-color: #e74c3c;
+    border-color: #c0392b;
 }
 
-/* Listagem de Imóveis */
 .imovel-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -117,127 +206,118 @@ button:hover,
 }
 
 .imovel-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    transition: transform 0.2s;
+    border: 1px solid var(--color4);
+    border-radius: 6px;
+    padding: 18px;
+    background: rgba(20, 95, 140, 0.3);
+    transition: all 0.2s;
 }
 
 .imovel-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: rgba(20, 95, 140, 0.5);
+    border-color: var(--color5);
+    transform: translateY(-2px);
 }
 
 .imovel-card h3 {
-    color: #2c3e50;
-    margin-bottom: 10px;
+    color: var(--color5);
+    margin-bottom: 12px;
+    font-size: 1.2em;
 }
 
 .imovel-card p {
     margin-bottom: 8px;
-    line-height: 1.6;
+    line-height: 1.5;
+    color: #d0d0d0;
+    font-size: 0.95em;
+}
+
+.imovel-card strong {
+    color: var(--color4);
 }
 
 .imovel-card img {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
     border-radius: 4px;
-    margin: 10px 0;
+    margin: 12px 0;
+    border: 1px solid var(--color3);
 }
 
 .imovel-card a {
-    display: inline-block;
-    margin-top: 10px;
+    font-size: 0.85em;
+    padding: 6px 12px;
+    margin-right: 5px;
 }
 
-/* Paginação */
 .pagination {
     text-align: center;
     margin: 30px 0;
-    padding: 20px;
+    padding: 15px;
 }
 
 .pagination a,
 .current {
-    padding: 10px 15px;
-    margin: 0 5px;
-    border: 1px solid #3498db;
+    padding: 8px 14px;
+    margin: 0 4px;
+    border: 1px solid var(--color4);
     border-radius: 4px;
     display: inline-block;
+    transition: all 0.2s;
+    font-size: 0.9em;
 }
 
 .pagination a {
-    background-color: white;
-    color: #3498db;
+    background-color: transparent;
+    color: var(--color4);
 }
 
 .pagination a:hover {
-    background-color: #3498db;
+    background-color: var(--color4);
     color: white;
 }
 
 .current {
-    background-color: #3498db;
+    background-color: var(--color3);
     color: white;
-    font-weight: bold;
+    border-color: var(--color4);
+    font-weight: 600;
 }
 
-/* Responsivo */
+footer {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--color2);
+    border-top: 1px solid var(--color4);
+    font-size: 0.9em;
+    color: #a0a0a0;
+}
+
 @media (max-width: 768px) {
+    .container {
+        margin: 10px;
+    }
+
     header h1 {
-        font-size: 1.8em;
+        font-size: 1.6em;
     }
 
     main {
-        margin: 10px;
-        padding: 10px;
+        padding: 15px;
     }
 
     .imovel-list {
         grid-template-columns: 1fr;
     }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
 }
-
-
-body {
-                font-family: sans-serif;
-                margin: 0;
-                background-color: #f8f9fa;
-                color: #343a40;
-                width: 100%;
-                min-height: 100vh;
-                --color1: rgb(255, 206, 84);
-                --color2: rgb(72, 85, 99);
-                background-color: var(--color1);
-                background-image: linear-gradient(45deg, var(--color2) 25%, transparent 25%, transparent 75%, var(--color2) 75%),
-                                                    linear-gradient(45deg, transparent 25%, var(--color1) 25%, var(--color1) 75%, transparent 75%),
-                                                    linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.05));
-                background-size: 80px 80px, 80px 80px, 100% 100%;
-                background-position: 0 0, 40px 40px, 0 0;
-            }
-
-            .container {
-                max-width: 1100px;
-                margin: 20px auto;
-                padding: 20px;
-                background-color: #ffffff;
-                border-radius: 8px;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            }
-
-            header { background-color: #007bff; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
-            header h1 { margin: 0; }
-
-            nav { display:flex; justify-content:center; gap:18px; background-color:#0056b3; padding:10px; border-radius:4px; }
-            nav a { color:white; text-decoration:none; font-weight:bold; }
-            nav a:hover { text-decoration:underline; }
-
-            main { padding:20px 0; }
-            footer { margin-top:20px; padding:20px; text-align:center; background-color:#e9ecef; border-radius:0 0 8px 8px; font-size:0.9em; }
-
-            ul { list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:12px; }
-            li { background:linear-gradient(to right,#f0f4ff,#fff); border:1px solid #d0d7e2; border-left:5px solid #007bff; border-radius:8px; padding:15px 20px; width:450px; transition:box-shadow .3s, transform .2s; }
-            li:hover { box-shadow:0 4px 10px rgba(0,123,255,0.1); transform:translateY(-2px); }
-            li a { font-weight:700; color:#007bff; }

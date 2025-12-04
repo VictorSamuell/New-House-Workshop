@@ -2,7 +2,6 @@
 {% block conteudo %}
     <h2>Novo Imóvel</h2>
     
-    <!-- Escreva o form aqui: -->
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}

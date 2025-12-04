@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+    <h2>Eliminar Corretor</h2>
+    
+    <p>Tem certeza de que deseja eliminar "<strong>{{ corretor.nome }}</strong>"?</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn-delete">Sim, Eliminar</button>
+        <a href="{% url 'detalhe_corretor' corretor.id %}">Cancelar</a>
+    </form>
+{% endblock %}

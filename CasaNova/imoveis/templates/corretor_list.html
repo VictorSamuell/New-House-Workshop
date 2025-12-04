@@ -1,22 +1,18 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-    <h2>Listagem de Imóveis</h2>
-    <a href="{% url 'criar_corretor' %}"> Cadastrar Novo Corretor </a>
+    <h2>Listagem de Corretores</h2>
+    <a href="{% url 'criar_corretor' %}"> Novo Corretor</a>
     
-    {% if imoveis %}
-        <div class="corretor-list">
+    {% if corretores %}
+        <div class="imovel-list">
             {% for corretor in corretores %}
                 <div class="imovel-card">
-                    <h3>{{ imovel.titulo }}</h3>
-                    <p>{{ imovel.descricao|truncatewords:20 }}</p>
-                    <p><strong>Preço:</strong> €{{ imovel.preco }}</p>
-                    <p><strong>Corretor:</strong> {{ imovel.corretor.nome }}</p>
-                    {% if imovel.foto_principal %}
-                        <img src="{{ imovel.foto_principal.url }}" alt="{{ imovel.titulo }}" width="200">
-                    {% endif %}
-                    <a href="{% url 'detalhe_imovel' imovel.id %}">Ver Detalhes</a>
-                    <a href="{% url 'editar_imovel' imovel.id %}">Editar</a>
-                    <a href="{% url 'deletar_imovel' imovel.id %}">Deletar</a>
+                    <h3>{{ corretor.nome }}</h3>
+                    <p><strong>CRECI:</strong> {{ corretor.creci }}</p>
+                    <p><strong>Telefone:</strong> {{ corretor.telefone }}</p>
+                    <a href="{% url 'detalhe_corretor' corretor.id %}">Ver Detalhes</a>
+                    <a href="{% url 'editar_corretor' corretor.id %}">Editar</a>
+                    <a href="{% url 'deletar_corretor' corretor.id %}">Deletar</a>
                 </div>
             {% endfor %}
         </div>
@@ -36,6 +32,6 @@
             {% endif %}
         </div>
     {% else %}
-        <p>Não há imóveis disponíveis no momento.</p>
+        <p>Não há corretores cadastrados no momento.</p>
     {% endif %}
 {% endblock %}

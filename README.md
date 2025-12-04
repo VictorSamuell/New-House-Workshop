@@ -1,4 +1,4 @@
-# Projeto Django "CasaNova" - Prova Prática
+# Projeto Django "CasaNova" - New House Workshop
 ---
 ---
 

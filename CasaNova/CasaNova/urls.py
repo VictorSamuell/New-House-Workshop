@@ -18,13 +18,19 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework.routers import DefaultRouter
+from rest_framework.authtoken.views import obtain_auth_token
+from rest_framework.authtoken import views as drf_auth_view
+from imoveis import views
+
+# Preparando para fazer a rota da API e do REST Framework
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('imoveis.urls')),
 ]
 
-# Serve media and static files in development
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

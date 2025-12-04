@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block conteudo %}
     <h2>Listagem de Imóveis</h2>
-    <a href="{% url 'criar_imovel' %}"> Novo Imóvel</a>
+    <a href="{% url 'criar_corretor' %}"> Cadastrar Novo Corretor </a>
     
     {% if imoveis %}
-        <div class="imovel-list">
-            {% for imovel in imoveis %}
+        <div class="corretor-list">
+            {% for corretor in corretores %}
                 <div class="imovel-card">
                     <h3>{{ imovel.titulo }}</h3>
                     <p>{{ imovel.descricao|truncatewords:20 }}</p>

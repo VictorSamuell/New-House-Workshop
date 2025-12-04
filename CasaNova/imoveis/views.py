@@ -6,7 +6,6 @@ from .models import Imovel
 from .forms import ImovelForm
 from .serializers import ImovelSerializer
 
-
 class ImovelListView(ListView):
     model = Imovel
     template_name = 'imovel_list.html'
@@ -15,7 +14,6 @@ class ImovelListView(ListView):
 
     def get_queryset(self):
         return Imovel.objects.filter(disponivel=True)
-
 
 class ImovelDetailView(DetailView):
     model = Imovel
@@ -28,13 +26,6 @@ class ImovelCreateView(CreateView):
     form_class = ImovelForm
     template_name = 'imovel_form.html'
     success_url = reverse_lazy('lista_imoveis')
-
-    # When running locally without authentication, we leave 'criado_por' as NULL
-    # (model allows null). If you later enable auth, uncomment the following to
-    # associate the logged-in user:
-    # def form_valid(self, form):
-    #     form.instance.criado_por = self.request.user
-    #     return super().form_valid(form)
 
 
 class ImovelUpdateView(UpdateView):

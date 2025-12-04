@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from decimal import Decimal
 
 
 class Corretor(models.Model):
@@ -28,7 +27,9 @@ class Imovel(models.Model):
         decimal_places=2
     )
     foto_principal = models.ImageField(upload_to='imoveis/')
-    disponivel = models.BooleanField(default=True)
+    disponivel = models.BooleanField(
+        default=True
+    )
     corretor = models.ForeignKey(Corretor, on_delete=models.CASCADE)
     criado_por = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 

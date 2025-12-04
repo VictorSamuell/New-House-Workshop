@@ -126,3 +126,15 @@ LOGOUT_REDIRECT_URL = '/'
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# Directories where Django looks for static files (in addition to app directories)
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
+
+# Where collectstatic collects files for production
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Media files (uploads)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'

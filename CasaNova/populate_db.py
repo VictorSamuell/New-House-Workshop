@@ -38,6 +38,41 @@ def populate_database():
             'creci': '555666777',
             'telefone': '+351 91 555 4433'
         },
+        {
+            'nome': 'Ana Costa',
+            'creci': '111222333',
+            'telefone': '+351 91 111 2222'
+        },
+        {
+            'nome': 'Carlos Ferreira',
+            'creci': '444555666',
+            'telefone': '+351 91 444 5555'
+        },
+        {
+            'nome': 'Lúcia Martins',
+            'creci': '777888999',
+            'telefone': '+351 91 777 8888'
+        },
+        {
+            'nome': 'Miguel Teixeira',
+            'creci': '222333444',
+            'telefone': '+351 91 222 3333'
+        },
+        {
+            'nome': 'Sofia Gomes',
+            'creci': '666777888',
+            'telefone': '+351 91 666 7777'
+        },
+        {
+            'nome': 'Roberto Alves',
+            'creci': '333444555',
+            'telefone': '+351 91 333 4444'
+        },
+        {
+            'nome': 'Camila Rocha',
+            'creci': '888999111',
+            'telefone': '+351 91 888 9999'
+        },
     ]
     
     corretores = []

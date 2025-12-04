@@ -12,7 +12,7 @@
     <p><strong>CRECI:</strong> {{ imovel.corretor.creci }}</p>
     <p><strong>Telefone:</strong> {{ imovel.corretor.telefone }}</p>
     <p><strong>Disponível:</strong> {% if imovel.disponivel %}Sim{% else %}Não{% endif %}</p>
-    <p><strong>Comissão do Corretor (5%):</strong> €{{ imovel.calcular_comissao }}</p>
+    <p><strong>Comissão do Corretor (5%):</strong> R$ {{ imovel.calcular_comissao }}</p>
     
     <a href="{% url 'editar_imovel' imovel.id %}">Editar</a>
     <a href="{% url 'deletar_imovel' imovel.id %}">Deletar</a>

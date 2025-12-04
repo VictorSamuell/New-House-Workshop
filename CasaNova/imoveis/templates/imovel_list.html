@@ -9,7 +9,7 @@
                 <div class="imovel-card">
                     <h3>{{ imovel.titulo }}</h3>
                     <p>{{ imovel.descricao|truncatewords:20 }}</p>
-                    <p><strong>Preço:</strong> €{{ imovel.preco }}</p>
+                    <p><strong>Preço:</strong> R$ {{ imovel.preco }}</p>
                     <p><strong>Corretor:</strong> {{ imovel.corretor.nome }}</p>
                     {% if imovel.foto_principal %}
                         <img src="{{ imovel.foto_principal.url }}" alt="{{ imovel.titulo }}" width="200">

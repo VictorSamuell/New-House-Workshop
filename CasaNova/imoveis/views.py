@@ -7,8 +7,6 @@ from .forms import ImovelForm
 from .serializers import ImovelSerializer
 
 
-# ============= CORRETOR CRUD =============
-
 class CorretorListView(ListView):
     model = Corretor
     template_name = 'corretor_list.html'
@@ -42,7 +40,6 @@ class CorretorDeleteView(DeleteView):
     success_url = reverse_lazy('lista_corretores')
 
 
-# ============= IMOVEL CRUD =============
 
 class ImovelListView(ListView):
     model = Imovel

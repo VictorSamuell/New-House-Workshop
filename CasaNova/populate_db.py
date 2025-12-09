@@ -15,7 +15,7 @@ from imoveis.models import Corretor, Imovel
 from django.contrib.auth.models import User
 
 def populate_database():
-    print("🏗️  Iniciando população da base de dados...")
+    print("Iniciando população")
     
     user = User.objects.get_or_create(username='admin')[0]
     

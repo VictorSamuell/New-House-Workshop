@@ -8,7 +8,12 @@ class ImovelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Imovel
         fields = [
-            'id', 'titulo', 'descricao', 'preco', 'foto_principal', 'disponivel',
+            'id', 
+            'titulo', 
+            'descricao', 
+            'preco', 
+            'foto_principal', 
+            'disponivel',
             'corretor',      
             'corretor_nome', 
             'criado_por'

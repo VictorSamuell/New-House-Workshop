@@ -1,11 +1,15 @@
 :root {
-    --color1: #120907;
-    --color2: #122942;
-    --color3: #145f8c;
-    --color4: #209ed9;
-    --color5: #20dbd8;
+    /* GitHub Colors - Dark Mode */
+    --gh-bg: #0d1117;
+    --gh-border: #30363d;
+    --gh-text: #c9d1d9;
+    --gh-text-secondary: #8b949e;
+    --gh-primary: #b6c3d3;
+    --gh-success: #3fb950;
+    --gh-accent: #444547;
+    --gh-subtle: #161b22;
+    --gh-danger: #f85149;
 }
-
 
 * {
     margin: 0;
@@ -19,45 +23,28 @@ html, body {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --s: 170px;
-    --c1: #1a4341;
-    --c2: #4f807c;
-    --c3: #356260;
-    --thickness: 15px;
-
-    background-color: var(--c1);
-    background-image: repeating-linear-gradient(
-        45deg,
-        var(--c2) 0 var(--thickness),
-        transparent var(--thickness) calc(var(--thickness) * 2)
-    ),
-    repeating-linear-gradient(
-        -45deg,
-        var(--c3) 0 var(--thickness),
-        transparent var(--thickness) calc(var(--thickness) * 2)
-    );
-    background-size: var(--s) var(--s);
-    background-attachment: fixed;
-    color: #f0f0f0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    background-color: var(--gh-bg);
+    color: var(--gh-text);
 }
 
 .container {
     max-width: 1200px;
     margin: 20px auto;
     padding: 0;
-    background: rgba(18, 41, 66, 0.92);
-    border-radius: 8px;
+    background: var(--gh-subtle);
+    border: 1px solid var(--gh-border);
+    border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0 1px rgba(240, 246, 252, 0.1);
 }
 
 header {
-    background-color: var(--color2);
-    color: var(--color5);
+    background-color: var(--gh-subtle);
+    color: var(--gh-primary);
     padding: 25px 20px;
     text-align: center;
-    border-bottom: 2px solid var(--color5);
+    border-bottom: 1px solid var(--gh-border);
 }
 
 header h1 {
@@ -70,65 +57,69 @@ nav {
     display: flex;
     justify-content: center;
     gap: 15px;
-    background-color: rgba(20, 95, 140, 0.6);
+    background-color: var(--gh-subtle);
     padding: 15px;
     flex-wrap: wrap;
+    border-bottom: 1px solid var(--gh-border);
 }
 
 nav a {
-    color: white;
+    color: var(--gh-text);
     text-decoration: none;
     padding: 10px 20px;
-    background-color: var(--color3);
-    border: 1px solid var(--color4);
-    border-radius: 4px;
+    background-color: transparent;
+    border: 1px solid var(--gh-border);
+    border-radius: 6px;
     transition: all 0.2s;
     font-size: 0.95em;
 }
 
 nav a:hover {
-    background-color: var(--color4);
-    border-color: var(--color5);
+    background-color: var(--gh-accent);
+    border-color: var(--gh-primary);
+    color: white;
 }
 
 main {
     padding: 30px;
-    background-color: rgba(18, 41, 66, 0.5);
+    background-color: var(--gh-bg);
 }
 
 h2 {
-    color: var(--color5);
+    color: var(--gh-primary);
     margin-bottom: 25px;
     font-size: 1.8em;
     font-weight: 600;
-    border-bottom: 1px solid var(--color4);
+    border-bottom: 1px solid var(--gh-border);
     padding-bottom: 10px;
 }
 
 a:not(nav a) {
-    color: var(--color4);
+    color: var(--gh-primary);
     text-decoration: none;
     padding: 8px 16px;
     margin: 5px;
     display: inline-block;
-    background-color: rgba(20, 95, 140, 0.4);
-    border: 1px solid var(--color4);
-    border-radius: 4px;
+    background-color: transparent;
+    border: 1px solid var(--gh-border);
+    border-radius: 6px;
     transition: all 0.2s;
     font-size: 0.9em;
 }
 
 a:not(nav a):hover {
-    background-color: var(--color4);
+    background-color: var(--gh-accent);
     color: white;
+    border-color: var(--gh-primary);
 }
 
 form {
     margin: 20px 0;
-    background: rgba(20, 95, 140, 0.2);
+    background: var(--gh-subtle);
     padding: 20px;
     border-radius: 6px;
-    border-left: 3px solid var(--color4);
+    border: 1px solid var(--gh-border);
+    border-left: 3px solid var(--gh-primary);
 }
 
 form p {
@@ -139,28 +130,26 @@ form label {
     display: block;
     margin-bottom: 6px;
     font-weight: 500;
-    color: var(--color5);
+    color: var(--gh-text);
     font-size: 0.95em;
 }
 
-form input,
-form textarea,
-form select {
+form input,form textarea,form select {
     width: 100%;
     padding: 10px;
-    border: 1px solid var(--color3);
-    border-radius: 4px;
+    border: 1px solid var(--gh-border);
+    border-radius: 6px;
     font-size: 0.95em;
-    background-color: rgba(20, 95, 140, 0.4);
-    color: white;
+    background-color: var(--gh-subtle);
+    color: var(--gh-text);
 }
 
 form input:focus,
 form textarea:focus,
 form select:focus {
     outline: none;
-    border-color: var(--color4);
-    box-shadow: 0 0 6px rgba(32, 157, 217, 0.2);
+    border-color: var(--gh-primary);
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
 }
 
 form textarea {
@@ -170,32 +159,35 @@ form textarea {
 
 button,
 .btn-delete {
-    background-color: var(--color3);
-    color: white;
     padding: 10px 20px;
-    border: 1px solid var(--color4);
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 0.95em;
     font-weight: 500;
     transition: all 0.2s;
     margin-top: 10px;
+    border: 1px solid var(--gh-border);
 }
 
-button:hover,
-.btn-delete:hover {
-    background-color: var(--color4);
-    border-color: var(--color5);
+button {
+    background-color: var(--gh-accent);
+    color: white;
+}
+
+button:hover {
+    background-color: var(--gh-primary);
+    border-color: var(--gh-primary);
 }
 
 .btn-delete {
-    background-color: #c0392b;
-    border-color: #e74c3c;
+    background-color: transparent;
+    color: var(--gh-danger);
+    border-color: var(--gh-danger);
 }
 
 .btn-delete:hover {
-    background-color: #e74c3c;
-    border-color: #c0392b;
+    background-color: var(--gh-danger);
+    color: white;
 }
 
 .imovel-list {
@@ -206,21 +198,22 @@ button:hover,
 }
 
 .imovel-card {
-    border: 1px solid var(--color4);
+    border: 1px solid var(--gh-border);
     border-radius: 6px;
     padding: 18px;
-    background: rgba(20, 95, 140, 0.3);
+    background: var(--gh-subtle);
     transition: all 0.2s;
 }
 
 .imovel-card:hover {
-    background: rgba(20, 95, 140, 0.5);
-    border-color: var(--color5);
+    background: var(--gh-subtle);
+    border-color: var(--gh-primary);
     transform: translateY(-2px);
+    box-shadow: 0 0 0 1px var(--gh-primary);
 }
 
 .imovel-card h3 {
-    color: var(--color5);
+    color: var(--gh-primary);
     margin-bottom: 12px;
     font-size: 1.2em;
 }
@@ -228,21 +221,21 @@ button:hover,
 .imovel-card p {
     margin-bottom: 8px;
     line-height: 1.5;
-    color: #d0d0d0;
+    color: var(--gh-text-secondary);
     font-size: 0.95em;
 }
 
 .imovel-card strong {
-    color: var(--color4);
+    color: var(--gh-primary);
 }
 
 .imovel-card img {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: 6px;
     margin: 12px 0;
-    border: 1px solid var(--color3);
+    border: 1px solid var(--gh-border);
 }
 
 .imovel-card a {
@@ -261,8 +254,8 @@ button:hover,
 .current {
     padding: 8px 14px;
     margin: 0 4px;
-    border: 1px solid var(--color4);
-    border-radius: 4px;
+    border: 1px solid var(--gh-border);
+    border-radius: 6px;
     display: inline-block;
     transition: all 0.2s;
     font-size: 0.9em;
@@ -270,18 +263,19 @@ button:hover,
 
 .pagination a {
     background-color: transparent;
-    color: var(--color4);
+    color: var(--gh-primary);
 }
 
 .pagination a:hover {
-    background-color: var(--color4);
+    background-color: var(--gh-accent);
     color: white;
+    border-color: var(--gh-primary);
 }
 
 .current {
-    background-color: var(--color3);
+    background-color: var(--gh-accent);
     color: white;
-    border-color: var(--color4);
+    border-color: var(--gh-primary);
     font-weight: 600;
 }
 
@@ -289,10 +283,10 @@ footer {
     margin-top: 30px;
     padding: 20px;
     text-align: center;
-    background-color: var(--color2);
-    border-top: 1px solid var(--color4);
+    background-color: var(--gh-subtle);
+    border-top: 1px solid var(--gh-border);
     font-size: 0.9em;
-    color: #a0a0a0;
+    color: var(--gh-text-secondary);
 }
 
 @media (max-width: 768px) {
@@ -320,4 +314,143 @@ footer {
         padding: 8px 16px;
         font-size: 0.9em;
     }
+
+    .form-control {
+        width: 100%;
+    }
+}
+
+.custum-file-upload {
+    height: 250px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #e8e8e8;
+    background-color: --gh-subtle;
+    padding: 1.5rem;
+    border-radius: 10px;
+    
+}
+
+.custum-file-upload .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custum-file-upload .icon svg {
+    height: 80px;
+    fill: #e8e8e8;
+}
+
+.custum-file-upload .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custum-file-upload .text span {
+    font-weight: 400;
+    color: #e8e8e8;
+}
+
+.custum-file-upload input {
+    display: none;
+}
+
+/* end custom file upload */
+
+.imovel-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--gh-subtle);
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid var(--gh-border);
+}
+
+.form-control {
+    position: relative;
+    margin: 20px 0 40px;
+    width: 100%;
+}
+
+.form-control input,
+.form-control textarea,
+.form-control select {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid var(--gh-border);
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 16px;
+    color: var(--gh-text);
+    font-family: inherit;
+}
+
+.form-control input:focus,
+.form-control input:valid,
+.form-control textarea:focus,
+.form-control textarea:valid,
+.form-control select:focus,
+.form-control select:valid {
+    outline: 0;
+    border-bottom-color: var(--gh-primary);
+}
+
+.animated-label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    pointer-events: none;
+    color: var(--gh-text-secondary);
+    font-size: 16px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + .animated-label,
+.form-control input:valid + .animated-label,
+.form-control textarea:focus + .animated-label,
+.form-control textarea:valid + .animated-label,
+.form-control select:focus + .animated-label,
+.form-control select:valid + .animated-label {
+    color: var(--gh-primary);
+    transform: translateY(-30px);
+}
+
+.field-errors {
+    margin-top: 8px;
+    color: var(--gh-danger);
+    font-size: 0.85em;
+}
+
+.error-message {
+    display: block;
+    padding: 4px 0;
+}
+
+.submit-btn {
+    align-self: flex-start;
+    margin-top: 30px;
+    background-color: var(--gh-accent);
+    color: var(--gh-text);
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: 1px solid var(--gh-border);
+}
+
+.submit-btn:hover {
+    background-color: var(--gh-primary);
+    color: var(--gh-bg);
+    border-color: var(--gh-primary);
 }

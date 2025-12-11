@@ -4,8 +4,10 @@ from .views import (
     ImovelListView, ImovelDetailView, ImovelCreateView,
     ImovelUpdateView, ImovelDeleteView, ImovelViewSet,
     CorretorListView, CorretorDetailView, CorretorCreateView,
-    CorretorUpdateView, CorretorDeleteView
+    CorretorUpdateView, CorretorDeleteView , RegisterView
 )
+
+
 
 router = DefaultRouter()
 router.register(r'imoveis', ImovelViewSet, basename='imovel')
@@ -25,6 +27,10 @@ urlpatterns = [
     path('imovel/<int:pk>/editar/', ImovelUpdateView.as_view(), name='editar_imovel'),
     path('imovel/<int:pk>/deletar/', ImovelDeleteView.as_view(), name='deletar_imovel'),
     
-   # preparando para a rota da API
+# preparando para a rota da API
     path('api/', include(router.urls)),
+    
+# rota register
+    path('register/', RegisterView.as_view(), name='register'),
+    
 ]

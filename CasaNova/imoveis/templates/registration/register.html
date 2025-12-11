@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <div class="container" style="max-width: 500px;">
+        <h2>Criar Conta</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="submit-btn">Registrar</button>
+            <p style="margin-top: 20px;">
+                Já tem conta? <a href="{% url 'login' %}">Faça login</a>
+            </p>
+        </form>
+    </div>
+{% endblock conteudo %}

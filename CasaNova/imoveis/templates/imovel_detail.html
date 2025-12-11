@@ -1,20 +1,58 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Detalhes do Imóvel: {{ imovel.titulo }}
+{% endblock %}
+
 {% block conteudo %}
     <h2>{{ imovel.titulo }}</h2>
     
-    {% if imovel.foto_principal %}
-        <img src="{{ imovel.foto_principal.url }}" alt="{{ imovel.titulo }}" width="400">
-    {% endif %}
-    
-    <p><strong>Descrição:</strong> {{ imovel.descricao }}</p>
-    <p><strong>Preço:</strong> €{{ imovel.preco }}</p>
-    <p><strong>Corretor:</strong> {{ imovel.corretor.nome }}</p>
-    <p><strong>CRECI:</strong> {{ imovel.corretor.creci }}</p>
-    <p><strong>Telefone:</strong> {{ imovel.corretor.telefone }}</p>
-    <p><strong>Disponível:</strong> {% if imovel.disponivel %}Sim{% else %}Não{% endif %}</p>
-    <p><strong>Comissão do Corretor (5%):</strong> R$ {{ imovel.calcular_comissao }}</p>
-    
-    <a href="{% url 'editar_imovel' imovel.id %}">Editar</a>
-    <a href="{% url 'deletar_imovel' imovel.id %}">Deletar</a>
-    <a href="{% url 'lista_imoveis' %}">Voltar à Lista</a>
+    <div class="detail-wrapper">
+        
+        <div class="detail-image">
+            {% if imovel.foto_principal %}
+                <img src="{{ imovel.foto_principal.url }}" alt="{{ imovel.titulo }}">
+            {% else %}
+                <img src="{% static 'images/placeholder.png' %}" alt="Sem foto">
+            {% endif %}
+        </div>
+        
+        <div class="detail-info-card">
+            
+            <h3>Informações do Imóvel</h3>
+            
+            <p><strong>Descrição:</strong> {{ imovel.descricao }}</p>
+            <p><strong>Preço:</strong> €{{ imovel.preco|floatformat:2 }}</p>
+            
+            <p>
+                <strong>Disponível:</strong> 
+                {% if imovel.disponivel %}
+                    <span class="status-available">SIM</span>
+                {% else %}
+                    <span class="status-unavailable">NÃO</span>
+                {% endif %}
+            </p>
+            
+            <p class="comissao-info">
+                <strong>Comissão (5%):</strong> R$ {{ imovel.calcular_comissao|floatformat:2 }}
+            </p>
+            
+            <hr class="detail-separator">
+            
+            <h3>Detalhes do Corretor</h3>
+            <p><strong>Nome:</strong> <a href="{% url 'detalhe_corretor' imovel.corretor.pk %}">{{ imovel.corretor.nome }}</a></p>
+            <p><strong>CRECI:</strong> {{ imovel.corretor.creci }}</p>
+            <p><strong>Telefone:</strong> {{ imovel.corretor.telefone }}</p>
+        </div>
+    </div>
+
+    <div class="detail-actions">
+        {% if user.is_authenticated %} 
+            <a href="{% url 'editar_imovel' imovel.id %}" class="submit-btn edit-btn">Editar Imóvel</a>
+            <a href="{% url 'deletar_imovel' imovel.id %}" class="submit-btn delete-btn">Deletar Imóvel</a>
+        {% endif %}
+        <a href="{% url 'lista_imoveis' %}" class="submit-btn back-btn">Voltar à Lista</a>
+    </div>
+
 {% endblock %}

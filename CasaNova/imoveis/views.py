@@ -5,7 +5,8 @@ from rest_framework import viewsets
 from .models import Imovel, Corretor
 from .forms import ImovelForm
 from .serializers import ImovelSerializer
-
+from .forms import UserRegisterForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 class CorretorListView(ListView):
     model = Corretor
@@ -14,27 +15,27 @@ class CorretorListView(ListView):
     paginate_by = 10
 
 
-class CorretorDetailView(DetailView):
+class CorretorDetailView(LoginRequiredMixin ,DetailView):
     model = Corretor
     template_name = 'corretor_detail.html'
     context_object_name = 'corretor'
 
 
-class CorretorCreateView(CreateView):
+class CorretorCreateView(LoginRequiredMixin, CreateView):
     model = Corretor
     fields = ['nome', 'creci', 'telefone']
     template_name = 'corretor_form.html'
     success_url = reverse_lazy('lista_corretores')
 
 
-class CorretorUpdateView(UpdateView):
+class CorretorUpdateView(LoginRequiredMixin ,UpdateView):
     model = Corretor
     fields = ['nome', 'creci', 'telefone']
     template_name = 'corretor_form.html'
     success_url = reverse_lazy('lista_corretores')
 
 
-class CorretorDeleteView(DeleteView):
+class CorretorDeleteView(LoginRequiredMixin ,DeleteView):
     model = Corretor
     template_name = 'corretor_confirm_delete.html'
     success_url = reverse_lazy('lista_corretores')
@@ -56,21 +57,21 @@ class ImovelDetailView(DetailView):
     context_object_name = 'imovel'
 
 
-class ImovelCreateView(CreateView):
+class ImovelCreateView(LoginRequiredMixin, CreateView):
     model = Imovel
     form_class = ImovelForm
     template_name = 'imovel_form.html'
     success_url = reverse_lazy('lista_imoveis')
 
 
-class ImovelUpdateView(UpdateView):
+class ImovelUpdateView(LoginRequiredMixin ,UpdateView):
     model = Imovel
     form_class = ImovelForm
     template_name = 'imovel_form.html'
     success_url = reverse_lazy('lista_imoveis')
 
 
-class ImovelDeleteView(DeleteView):
+class ImovelDeleteView(LoginRequiredMixin, DeleteView):
     model = Imovel
     template_name = 'imovel_confirm_delete.html'
     success_url = reverse_lazy('lista_imoveis')
@@ -93,3 +94,10 @@ class ImovelViewSet(viewsets.ModelViewSet):
             queryset = queryset.filter(preco__lte=preco_max)
             
         return queryset
+
+
+class RegisterView(CreateView):
+    form_class = UserRegisterForm
+    template_name = 'registration/register.html'
+    # Redireciona para a página de login após um registro bem-sucedido
+    success_url = reverse_lazy('login')

@@ -7,29 +7,29 @@
 ```
 CasaNova/
 ├── CasaNova/                    # Projeto Django
-│   ├── settings.py              # Configurações (SQLite)
+│   ├── settings.py              # Configurações 
 │   ├── urls.py                  # URLs principais
 │   └── wsgi.py
 ├── imoveis/                     # App principal
-│   ├── models.py               # ✓ Modelos Corretor, Imovel
-│   ├── views.py                # ✓ Views (ListView, DetailView, CreateView, etc.)
-│   ├── forms.py                # ✓ ImovelForm
-│   ├── serializers.py          # ✓ ImovelSerializer
-│   ├── urls.py                 # ✓ Rotas (Web + API)
-│   ├── admin.py                # ✓ Admin registado
+│   ├── models.py               #  Modelos Corretor, Imovel
+│   ├── views.py                #  Views (ListView, DetailView, CreateView, etc.)
+│   ├── forms.py                #  ImovelForm
+│   ├── serializers.py          #  ImovelSerializer
+│   ├── urls.py                 #  Rotas (Web + API)
+│   ├── admin.py                #  Admin registado
 │   └── templates/
-│       ├── base.html           # ✓ Template base
-│       ├── imovel_list.html    # ✓ Listagem com paginação
-│       ├── imovel_detail.html  # ✓ Detalhes do imóvel
-│       ├── imovel_form.html    # ✓ Formulário
-│       └── imovel_confirm_delete.html  # ✓ Confirmação delete
+│       ├── base.html           #  Template base
+│       ├── imovel_list.html    #  Listagem com paginação
+│       ├── imovel_detail.html  #  Detalhes do imóvel
+│       ├── imovel_form.html    #  Formulário
+│       └── imovel_confirm_delete.html  #  Confirmação delete
 ├── static/
 │   └── css/
-│       └── style.css           # ✓ Estilos CSS responsivos
+│       └── style.css           # Estilos CSS responsivos
 ├── db.sqlite3                  # Base de dados
 ├── manage.py
-├── criar_dados_teste.py        # ✓ Script para criar dados
-└── API_TESTS.md                # ✓ Documentação de testes
+├── criar_dados_teste.py        # Script para criar dados
+└── API_TESTS.md                # Documentação de testes
 ```
 
 ---

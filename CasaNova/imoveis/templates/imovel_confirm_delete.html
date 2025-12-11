@@ -2,11 +2,11 @@
 {% block conteudo %}
     <h2>Eliminar Imóvel</h2>
     
-    <p>Tem certeza de que deseja eliminar "<strong>{{ imovel.titulo }}</strong>"?</p>
+    <p>Tem certeza de que deseja jogar fora o imovel? "<strong>{{ imovel.titulo }}</strong>"?</p>
     
     <form method="post">
         {% csrf_token %}
-        <button type="submit" class="btn-delete">Sim, Eliminar</button>
+        <button type="submit" class="btn-delete">Sim, Mandar Embora </button>
         <a href="{% url 'detalhe_imovel' imovel.id %}">Cancelar</a>
     </form>
 {% endblock %}

@@ -23,7 +23,7 @@
             <h3>Informações do Imóvel</h3>
             
             <p><strong>Descrição:</strong> {{ imovel.descricao }}</p>
-            <p><strong>Preço:</strong> €{{ imovel.preco|floatformat:2 }}</p>
+            <p><strong>Preço:</strong> R$ {{ imovel.preco|floatformat:2 }}</p>
             
             <p>
                 <strong>Disponível:</strong> 
@@ -52,7 +52,9 @@
             <a href="{% url 'editar_imovel' imovel.id %}" class="submit-btn edit-btn">Editar Imóvel</a>
             <a href="{% url 'deletar_imovel' imovel.id %}" class="submit-btn delete-btn">Deletar Imóvel</a>
         {% endif %}
-        <a href="{% url 'lista_imoveis' %}" class="submit-btn back-btn">Voltar à Lista</a>
+        <a href="{% url 'lista_imoveis' %}" class="submit-btn back-btn">Voltar à Lista de Imóveis</a>
+        <a href="{% url 'lista_corretores' %}" class="submit-btn back-btn">Voltar à Lista de Corretores</a>
+        
     </div>
 
 {% endblock %}

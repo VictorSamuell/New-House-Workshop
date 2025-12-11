@@ -21,27 +21,27 @@ def populate_database():
     
     corretores_data = [
         {
-            'nome': 'João Silva',
+            'nome': 'Victor Samuel',
             'creci': '123456789',
             'telefone': '+351 91 234 5678'
         },
         {
-            'nome': 'Maria Santos',
+            'nome': 'Lucas Leoni',
             'creci': '987654321',
             'telefone': '+351 91 987 6543'
         },
         {
-            'nome': 'Pedro Oliveira',
+            'nome': 'Emerson',
             'creci': '555666777',
             'telefone': '+351 91 555 4433'
         },
         {
-            'nome': 'Ana Costa',
+            'nome': 'Milleni',
             'creci': '111222333',
             'telefone': '+351 91 111 2222'
         },
         {
-            'nome': 'Carlos Ferreira',
+            'nome': 'Danilão',
             'creci': '444555666',
             'telefone': '+351 91 444 5555'
         },
@@ -79,7 +79,7 @@ def populate_database():
             defaults={'nome': data['nome'], 'telefone': data['telefone']}
         )
         if created:
-            print(f"✓ Corretor criado: {corretor.nome}")
+            print(f"Corretor criado: {corretor.nome}")
         else:
             print(f"- Corretor já existe: {corretor.nome}")
         corretores.append(corretor)
@@ -140,7 +140,7 @@ def populate_database():
             print(f"- Imóvel já existe: {imovel.titulo}")
     
     print("\n" + "="*60)
-    print("✅ Resumo da População:")
+    print("Resumo da População:")
     print(f"  • Corretores: {Corretor.objects.count()}")
     print(f"  • Imóveis: {Imovel.objects.count()}")
     print(f"  • Imóveis Disponíveis: {Imovel.objects.filter(disponivel=True).count()}")

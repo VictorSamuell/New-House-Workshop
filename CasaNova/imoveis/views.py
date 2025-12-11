@@ -99,5 +99,4 @@ class ImovelViewSet(viewsets.ModelViewSet):
 class RegisterView(CreateView):
     form_class = UserRegisterForm
     template_name = 'registration/register.html'
-    # Redireciona para a página de login após um registro bem-sucedido
     success_url = reverse_lazy('login')

@@ -7,9 +7,8 @@ from .views import (
     CorretorUpdateView, CorretorDeleteView , RegisterView
 )
 
-
-
 router = DefaultRouter()
+# imovel viewset para a API do serializer
 router.register(r'imoveis', ImovelViewSet, basename='imovel')
 
 urlpatterns = [

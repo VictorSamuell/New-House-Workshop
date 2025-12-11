@@ -1,355 +1,584 @@
-/* ============================================================
-   TEMA GITHUB DARK – PALETA PRINCIPAL
-   ============================================================ */
-
 :root {
     --gh-bg: #0d1117;
-    --gh-bg2: #161b22;
     --gh-border: #30363d;
-    --gh-primary: #58a6ff;
-    --gh-secondary: #c9d1d9;
-    --gh-accent: #1f6feb;
-
-    --gh-danger: #f85149;
+    --gh-text: #c9d1d9;
+    --gh-text-secondary: #f7f7f7;
+    --gh-primary: #ebeef3;
     --gh-success: #3fb950;
-    --gh-warning: #d29922;
-
-    --gh-subtle: #1c222c;
+    --gh-accent: #444547;
+    --gh-subtle: #161b22;
+    --gh-danger: #f85149;
 }
 
-/* ============================================================
-   RESET E BASE
-   ============================================================ */
-
-body {
-    background-color: var(--gh-bg);
-    color: var(--gh-secondary);
-    font-family: "Segoe UI", sans-serif;
+* {
     margin: 0;
-    padding: 0 20px;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1, h2, h3 {
-    color: var(--gh-primary);
-    font-weight: 700;
-}
-
-a {
-    color: var(--gh-primary);
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-
-/* ============================================================
-   BOTÕES
-   ============================================================ */
-
-.submit-btn {
-    display: inline-block;
-    padding: 12px 22px;
-    border-radius: 8px;
-    font-weight: 600;
-    border: 1px solid var(--gh-border);
-    transition: 0.25s ease-in-out;
-}
-
-/* Padrão */
-.submit-btn:hover {
-    box-shadow: 0 0 12px rgba(182,195,211,0.35);
-    transform: translateY(-2px);
-}
-
-/* Verde */
-.create-btn {
-    background: var(--gh-success);
-    color: var(--gh-bg);
-}
-.create-btn:hover {
-    opacity: .85;
-}
-
-/* Azul */
-.edit-btn {
-    background: var(--gh-primary);
-    color: var(--gh-bg);
-}
-
-/* Vermelho */
-.delete-btn {
-    background: var(--gh-danger);
-    color: white;
-}
-
-/* Cinza/Azul */
-.back-btn {
-    background: var(--gh-accent);
-    color: white;
-}
-
-/* ============================================================
-   FORMULÁRIO
-   ============================================================ */
-
-form {
-    background: var(--gh-bg2);
-    padding: 25px;
-    border-radius: 12px;
-    border: 1px solid var(--gh-border);
-    box-shadow: 0 0 15px rgba(0,0,0,0.25);
-}
-
-input, select {
-    background: var(--gh-subtle);
-    color: var(--gh-secondary);
-    border: 1px solid var(--gh-border);
-    padding: 10px;
-    width: 100%;
-    border-radius: 6px;
-    margin-bottom: 18px;
-}
-
-label {
-    font-size: 1.1rem;
-    font-weight: 600;
-    display: block;
-    margin-bottom: 6px;
-}
-
-/* ============================================================
-   TABELAS LISTA
-   ============================================================ */
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background: var(--gh-bg2);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-thead {
-    background: var(--gh-subtle);
-}
-
-th, td {
-    padding: 14px;
-    border-bottom: 1px solid var(--gh-border);
-}
-
-tr:hover {
-    background: rgba(255,255,255,0.04);
-}
-
-.action-links a {
-    padding: 7px 15px;
-    border-radius: 6px;
-    border: 1px solid var(--gh-border);
-    transition: .25s;
-}
-.action-links a:hover {
-    opacity: .8;
-}
-
-/* ============================================================
-   DETALHE PREMIUM – IMÓVEL
-   ============================================================ */
-
-.detail-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 15px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--gh-primary);
-    text-shadow: 0 0 8px rgba(182,195,211,0.25);
-}
-
-.detail-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 35px;
-    margin-top: 30px;
-    padding: 30px;
-    background: rgba(22,27,34,0.6);
-    border-radius: 12px;
-    border: 1px solid var(--gh-border);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 0 25px rgba(0,0,0,0.2);
-    animation: fadeIn 0.6s ease-out;
-}
-
-/* Imagem */
-
-.detail-image {
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--gh-border);
-    max-height: 420px;
-    position: relative;
-}
-
-.detail-image img {
+html, body {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: .35s ease;
 }
 
-.detail-image:hover img {
-    transform: scale(1.06);
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    background-color: var(--gh-bg);
+    color: var(--gh-text);
 }
 
-/* Card Info */
-.detail-info-card {
-    padding: 25px;
-    background: rgba(240,246,252,0.03);
-    border-radius: 12px;
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0;
+    background: var(--gh-subtle);
     border: 1px solid var(--gh-border);
-    box-shadow: 0 0 20px rgba(0,0,0,0.15);
-    animation: fadeSlideUp .6s ease-out;
-}
-
-.detail-price {
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--gh-primary);
-    margin-bottom: 10px;
-    text-shadow: 0 0 5px rgba(182,195,211,0.3);
-}
-
-.comissao-info {
-    padding: 15px;
-    background: rgba(182,195,211,0.12);
-    border-left: 4px solid var(--gh-primary);
     border-radius: 6px;
-    margin-top: 20px;
-    font-size: 1.15em;
-    font-weight: 500;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px rgba(240, 246, 252, 0.1);
 }
 
-.status-available {
-    background: rgba(63,185,80,0.15);
-    padding: 6px 14px;
-    border-radius: 8px;
-    color: var(--gh-success);
-    font-weight: 700;
-}
-
-.status-unavailable {
-    background: rgba(248,81,73,0.15);
-    padding: 6px 14px;
-    border-radius: 8px;
-    color: var(--gh-danger);
-    font-weight: 700;
-}
-
-.detail-actions {
-    margin-top: 45px;
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-/* ============================================================
-   DETALHE DO CORRETOR (MESMO ESTILO DO IMÓVEL)
-   ============================================================ */
-
-.corretor-detail-wrapper {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-    padding: 25px;
-    background: rgba(22,27,34,0.6);
-    border: 1px solid var(--gh-border);
-    border-radius: 12px;
-    backdrop-filter: blur(8px);
-}
-
-.corretor-info-card,
-.corretor-lista-imoveis {
-    flex: 1 1 45%;
-    background: rgba(240,246,252,0.03);
-    border: 1px solid var(--gh-border);
-    border-radius: 12px;
-    padding: 20px;
-}
-
-.corretor-info-card h3,
-.corretor-lista-imoveis h3 {
+header {
+    background-color: var(--gh-subtle);
     color: var(--gh-primary);
+    padding: 25px 20px;
+    text-align: center;
     border-bottom: 1px solid var(--gh-border);
-    padding-bottom: 8px;
-    margin-bottom: 20px;
-    font-size: 1.5em;
 }
 
-/* ============================================================
-   GALERIA DE IMAGENS (para futuro)
-   ============================================================ */
+header h1 {
+    font-size: 2.2em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
 
-.detail-gallery {
+nav {
     display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    padding-top: 10px;
+    justify-content: center;
+    gap: 15px;
+    background-color: var(--gh-subtle);
+    padding: 15px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--gh-border);
 }
 
-.detail-gallery img {
-    height: 95px;
-    border-radius: 8px;
+nav a {
+    color: var(--gh-text);
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: transparent;
     border: 1px solid var(--gh-border);
-    transition: .25s;
+    border-radius: 6px;
+    transition: all 0.2s;
+    font-size: 0.95em;
 }
 
-.detail-gallery img:hover {
-    transform: scale(1.06);
+nav a:hover {
+    background-color: var(--gh-accent);
+    border-color: var(--gh-primary);
+    color: white;
+}
+
+main {
+    padding: 30px;
+    background-color: var(--gh-bg);
+}
+
+h2 {
+    color: var(--gh-primary);
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    font-weight: 600;
+    border-bottom: 1px solid var(--gh-border);
+    padding-bottom: 10px;
+}
+
+a:not(nav a) {
+    color: var(--gh-primary);
+    text-decoration: none;
+    padding: 8px 16px;
+    margin: 5px;
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid var(--gh-border);
+    border-radius: 6px;
+    transition: all 0.2s;
+    font-size: 0.9em;
+}
+
+a:not(nav a):hover {
+    background-color: var(--gh-accent);
+    color: white;
     border-color: var(--gh-primary);
 }
 
-/* ============================================================
-   ANIMAÇÕES
-   ============================================================ */
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+form {
+    margin: 20px 0;
+    background: var(--gh-subtle);
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid var(--gh-border);
+    border-left: 3px solid var(--gh-primary);
 }
 
-@keyframes fadeSlideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+form p {
+    margin-bottom: 15px;
 }
 
-/* ============================================================
-   RESPONSIVIDADE
-   ============================================================ */
+form label {
+    display: block;
+    margin-bottom: 6px;
+    margin-top: 12px;
+    font-weight: 500;
+    color: var(--gh-text);
+    font-size: 0.95em;
+}
+form input,form textarea,form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--gh-border);
+    border-radius: 6px;
+    font-size: 0.95em;
+    background-color: var(--gh-subtle);
+    color: var(--gh-text);
+}
+form input:focus,
+form textarea:focus,
+form select:focus {
+    outline: none;
+    border-color: var(--gh-primary);
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+}
 
-@media (max-width: 900px) {
-    .detail-wrapper {
+form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+button,
+.btn-delete {
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.2s;
+    margin-top: 10px;
+    border: 1px solid var(--gh-border);
+}
+
+button {
+    background-color: var(--gh-accent);
+    color: white;
+}
+
+button:hover {
+    background-color: var(--gh-primary);
+    border-color: var(--gh-primary);
+}
+
+.btn-delete {
+    background-color: transparent;
+    color: var(--gh-danger);
+    border-color: var(--gh-danger);
+}
+
+.btn-delete:hover {
+    background-color: var(--gh-danger);
+    color: white;
+}
+
+.imovel-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.imovel-card {
+    border: 1px solid var(--gh-border);
+    border-radius: 6px;
+    padding: 18px;
+    background: var(--gh-subtle);
+    transition: all 0.2s;
+}
+
+.imovel-card:hover {
+    background: var(--gh-subtle);
+    border-color: var(--gh-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 0 0 1px var(--gh-primary);
+}
+
+.imovel-card h3 {
+    color: var(--gh-primary);
+    margin-bottom: 12px;
+    font-size: 1.2em;
+}
+
+.imovel-card p {
+    margin-bottom: 8px;
+    line-height: 1.5;
+    color: var(--gh-text-secondary);
+    font-size: 0.95em;
+}
+
+.imovel-card strong {
+    color: var(--gh-primary);
+}
+
+.imovel-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin: 12px 0;
+    border: 1px solid var(--gh-border);
+}
+
+.imovel-card a {
+    font-size: 0.85em;
+    padding: 6px 12px;
+    margin-right: 5px;
+}
+
+.pagination {
+    text-align: center;
+    margin: 30px 0;
+    padding: 15px;
+}
+
+.pagination a,
+.current {
+    padding: 8px 14px;
+    margin: 0 4px;
+    border: 1px solid var(--gh-border);
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.2s;
+    font-size: 0.9em;
+}
+
+.pagination a {
+    background-color: transparent;
+    color: var(--gh-primary);
+}
+
+.pagination a:hover {
+    background-color: var(--gh-accent);
+    color: white;
+    border-color: var(--gh-primary);
+}
+
+.current {
+    background-color: var(--gh-accent);
+    color: white;
+    border-color: var(--gh-primary);
+    font-weight: 600;
+}
+
+footer {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--gh-subtle);
+    border-top: 1px solid var(--gh-border);
+    font-size: 0.9em;
+    color: var(--gh-text-secondary);
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+    }
+
+    header h1 {
+        font-size: 1.6em;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    .imovel-list {
         grid-template-columns: 1fr;
     }
 
-    .detail-image {
-        max-height: 320px;
+    nav {
+        gap: 10px;
     }
 
-    .corretor-detail-wrapper {
-        flex-direction: column;
+    nav a {
+        padding: 8px 16px;
+        font-size: 0.9em;
     }
+
+    .form-control {
+        width: 100%;
+    }
+}
+
+.custum-file-upload {
+    height: 250px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #e8e8e8;
+    background-color: --gh-subtle;
+    padding: 1.5rem;
+    border-radius: 10px;
+    
+}
+
+.custum-file-upload .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custum-file-upload .icon svg {
+    height: 80px;
+    fill: #e8e8e8;
+}
+
+.custum-file-upload .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custum-file-upload .text span {
+    font-weight: 400;
+    color: #e8e8e8;
+}
+
+.custum-file-upload input {
+    display: none;
+}
+
+
+.imovel-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--gh-subtle);
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid var(--gh-border);
+}
+
+.form-control {
+    position: relative;
+    margin: 20px 0 40px;
+    width: 100%;
+}
+
+.form-control.disponivel-field {
+    margin: 20px 0 8px;
+}
+
+.form-control input,
+.form-control textarea,
+.form-control select {
+    background-color: transparent;
+    border: 1px solid var(--gh-border);
+    border-bottom: 2px solid var(--gh-border);
+    display: block;
+    width: 100%;
+    padding: 12px 8px;
+    font-size: 16px;
+    color: var(--gh-text);
+    font-family: inherit;
+}
+
+.form-control input:hover,
+.form-control textarea:hover,
+.form-control select:hover {
+   transition: 0.2s;
+   background-color: #0c0c0c;
+}
+
+.form-control input:focus,
+.form-control input:valid,
+.form-control textarea:focus,
+.form-control textarea:valid,
+.form-control select:focus,
+.form-control select:valid {
+    outline: 0;
+    border-bottom-color: var(--gh-primary);
+}
+
+.animated-label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    pointer-events: none;
+    color: var(--gh-text-secondary);
+    font-size: 16px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + .animated-label,
+.form-control input:valid + .animated-label,
+.form-control textarea:focus + .animated-label,
+.form-control textarea:valid + .animated-label,
+.form-control select:focus + .animated-label,
+.form-control select:valid + .animated-label {
+    color: var(--gh-primary);
+    transform: translateY(-30px);
+}
+
+.field-errors {
+    margin-top: 8px;
+    color: var(--gh-danger);
+    font-size: 0.85em;
+}
+
+.error-message {
+    display: block;
+    padding: 4px 0;
+}
+
+.submit-btn {
+    align-self: flex-start;
+    margin-top: 30px;
+    background-color: var(--gh-accent);
+    color: var(--gh-text);
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: 1px solid var(--gh-border);
+}
+
+.submit-btn:hover {
+    background-color: var(--gh-primary);
+    color: var(--gh-bg);
+    border-color: var(--gh-primary);
+}
+
+.praashoo-checkbox-container input {
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.praashoo-checkbox-container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
+}
+
+.praashoo-checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 3em;
+    width: 3em;
+    background-color: #171717;
+    border-radius: 10px;
+    transition: .2s ease-in-out;
+    z-index: 2;
+}
+
+.praashoo-like {
+    position: relative;
+    font-size: 0.8em;
+    top: -3.5em;
+    text-align: center;
+    z-index: -1;
+}
+
+.praashoo-icon {
+    margin: 0.2em;
+    fill: white;
+    transition: .4s ease-in-out;
+}
+
+.praashoo-checkmark:hover {
+    background-color: white;
+}
+
+.praashoo-checkmark:hover .praashoo-icon {
+    fill: black;
+    transform: rotate(-8deg);
+    transform-origin: bottom left;
+}
+
+.praashoo-checkbox-container input:checked ~ .praashoo-checkmark {
+    background-color: limegreen;
+}
+
+.praashoo-checkbox-container input:checked ~ .praashoo-like {
+    color: white;
+    animation: 0.6s up_3951;
+}
+
+.praashoo-checkbox-container input:checked ~ .praashoo-checkmark .praashoo-icon {
+    fill: white;
+    transform: none;
+    animation: 0.5s jump_3951;
+}
+
+.praashoo-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.praashoo-checkbox-container input:checked ~ .praashoo-checkmark:after {
+    display: block;
+}
+
+@keyframes up_3951 {
+    100% { transform: translateY(-2em); }
+}
+
+@keyframes jump_3951 {
+    50% { transform-origin: center; transform: translateY(-0.5em) rotate(-8deg); }
+    100% { transform-origin: center; transform: translateY(0em); }
+}
+
+.logout-btn {
+    background-color: var(--gh-danger);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: all 0.2s;
+    margin-top: 0;
+    
+}
+
+.form-logout{
+    margin: 0;
+    padding: 0;
+    border: none;
+    
+}
+
+.detail-image{
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+
+}
+
+.detail-image img{
+    width: 40%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--gh-border);
+    margin-bottom: 20px;
 }

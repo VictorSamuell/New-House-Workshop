@@ -110,8 +110,8 @@ USE_I18N = True
 USE_TZ = True
 
 LOGIN_URL = '/'
-LOGIN_REDIRECT_URL = '/'  # Redireciona para a home ('/') após o login
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'  
+LOGOUT_REDIRECT_URL = '/accounts/login/' # redireciona para login dps do logout
 
 
 STATIC_URL = 'static/'

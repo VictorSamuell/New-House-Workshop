@@ -1,4 +1,4 @@
-// Animate form labels with staggered character animation
+// animação pro css
 document.addEventListener('DOMContentLoaded', function() {
     const labels = document.querySelectorAll('.animated-label');
     
@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const text = label.textContent;
         label.innerHTML = '';
         
-        // Create a span for each character with staggered delay
         text.split('').forEach((char, index) => {
             const span = document.createElement('span');
             span.textContent = char;
